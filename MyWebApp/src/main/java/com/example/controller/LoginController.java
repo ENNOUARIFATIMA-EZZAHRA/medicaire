@@ -20,9 +20,9 @@ public class LoginController {
         User user = userDao.getUser(username);
 
         if (user != null && user.getPassword().equals(password)) {
-            // Successful login logic
+
         } else {
-            // Failed login logic
+
         }
     }
 }

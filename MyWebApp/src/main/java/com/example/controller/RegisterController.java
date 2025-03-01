@@ -18,6 +18,6 @@ public class RegisterController {
         String password = request.getParameter("password");
         User user = new User(username, password);
         userDao.registerUser(user);
-        // Registration success logic
+
     }
 }
