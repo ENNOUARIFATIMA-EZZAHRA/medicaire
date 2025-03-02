@@ -1,21 +1,36 @@
+<%@ page language="java" contentType="text/html; charset=US-ASCII"
+    pageEncoding="US-ASCII"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "https://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <title>Home</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>Login Success Page</title>
 </head>
-<body class="bg-gray-100">
-    <header class='flex items-center justify-between p-4 bg-blue-500 shadow'>
-        <span class='text-white font-bold'>Medicare</span>
-        <nav>
-            <ul class='flex space-x-4'>
-                <li><a href='index.jsp' class='text-white hover:text-blue-300'>Home</a></li>
-                <li><a href='register.jsp' class='text-white hover:text-blue-300'>Register</a></li>
-                <li><a href='login.jsp' class='text-white hover:text-blue-300'>Login</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="flex items-center justify-center h-screen">
-        <h2 class="text-2xl font-bold">Welcome to the Patient Page!</h2>
-    </div>
+<body>
+<%
+//allow access only if session exists
+String user = (String) session.getAttribute("user");
+String userName = null;
+String sessionID = null;
+Cookie[] cookies = request.getCookies();
+if(cookies !=null){
+for(Cookie cookie : cookies){
+	if(cookie.getName().equals("user")) userName = cookie.getValue();
+	if(cookie.getName().equals("JSESSIONID")) sessionID = cookie.getValue();
+}
+}
+%>
+<h3>Hi <%=userName %>, Login successful. Your Session ID=<%=sessionID %></h3>
+<br>
+User=<%=user %>
+<br>
+<a href="CheckoutPage.jsp">Checkout Page</a>
+<form action="LogoutServlet" method="post">
+<input type="submit" value="Logout" >
+</form>
+<form action="/saveUserData" method="post">
+    <input type="text" name="username" value="${param.username}" readonly>
+    <button type="submit">Save</button>
+</form>
 </body>
 </html>

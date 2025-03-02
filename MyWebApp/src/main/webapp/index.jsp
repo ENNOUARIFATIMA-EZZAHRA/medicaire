@@ -23,6 +23,7 @@
                 <h2 class="text-2xl font-semibold mt-4">MediCare</h2>
                 <p class="text-gray-500">Welcome to the Home Page!</p>
             </div>
+
             <div class="text-center">
                 <button onclick="window.location.href='login.jsp';" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Login</button>
                 <button onclick="window.location.href='register.jsp';" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Register</button>

@@ -32,27 +32,26 @@
                 </div>
             </c:if>
 
-            <form action='/login' method='post' class='bg-white p-8 rounded-lg shadow-lg'>
+            <form action='/LoginServlet' method='post' class='bg-white p-8 rounded-lg shadow-lg'>
                 <div class='mb-4'>
-                    <label for='username' class='block text-gray-700'>Username:</label>
-                    <input type='text' id='username' name='username' class='border rounded py-2 px-3 w-64' required>
+                    <label for='email' class='block text-gray-700'>Email:</label>
+                    <input type='email' id='email' name='email' class='border rounded py-2 px-3 w-64' required>
                 </div>
                 <div class='mb-4'>
                     <label for='password' class='block text-gray-700'>Password:</label>
-                    <input type='password' id='password' name='password' class='border rounded py-2 px-3 w-64' required>
+                    <input type='password' id='password' name='password' class='border rounded py-2 px-3 w-64' required minlength='8'>
                 </div>
-                <div class='flex justify-center'>
-                    <button type='submit' class='bg-blue-500 text-white py-2 px-4 rounded'>Login</button>
+                <div class='mb-4'>
+                    <input type='submit' value='Login' class='bg-blue-500 text-white rounded py-2 px-4'>
                 </div>
+                <div id='error-message' class='text-red-500'></div>
             </form>
-            <script>
-                document.querySelector('form').addEventListener('submit', function(event) {
-                    event.preventDefault();
-                    // Here you would normally handle the login logic
-                    // For demonstration, we will redirect to the home page
-                    window.location.href = 'home.jsp';
-                });
-            </script>
+
+            <form action="/saveUserData" method="post">
+                <input type="text" name="username" placeholder="Enter Username" required>
+                <input type="password" name="password" placeholder="Enter Password" required>
+                <button type="submit">Save</button>
+            </form>
 
             <div class="text-center mt-4">
                 <a href="${pageContext.request.contextPath}/register" class="text-blue-600 hover:text-blue-800 text-sm">

@@ -18,15 +18,11 @@
             <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-sm">
                 <div class="text-center mb-8">
                     <i class="fas fa-hospital-user text-5xl text-blue-600"></i>
-                    <h2 class="text-2xl font-bold mt-4">LOGIN</h2>
+                    <h2 class="text-2xl font-bold mt-4">Register</h2>
                     <p class="text-gray-500">Welcome back! New here? Create an account to get started!</p>
                 </div>
 
-                <c:if test="${not empty error}">
-                    <div class="bg-red-100 text-red-600 p-3 rounded mb-6 text-center">
-                        ${error}
-                    </div>
-                </c:if>
+
 
             <form action="/register" method="post">
                 <div class='mb-4'>
