@@ -4,7 +4,7 @@
          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-    <!-- تعريف Servlet لتسجيل الدخول -->
+
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>com.medicare.controller.LoginServlet</servlet-class>
@@ -14,7 +14,7 @@
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
 
-    <!-- تعريف Servlet للتسجيل -->
+
     <servlet>
         <servlet-name>RegisterServlet</servlet-name>
         <servlet-class>com.medicare.controller.RegisterServlet</servlet-class>
@@ -24,7 +24,7 @@
         <url-pattern>/register</url-pattern>
     </servlet-mapping>
 
-    <!-- تعريف فلتر المصادقة -->
+
     <filter>
         <filter-name>AuthenticationFilter</filter-name>
         <filter-class>com.medicare.filter.AuthenticationFilter</filter-class>
